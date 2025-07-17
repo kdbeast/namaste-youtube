@@ -5,7 +5,6 @@ import { useSearchParams } from "react-router-dom";
 
 const WatchPage = () => {
   let [searchParams] = useSearchParams();
-  console.log(searchParams.get("v"));
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,7 +18,7 @@ const WatchPage = () => {
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         src={
-          "https://www.youtube.com/embed/1aemq8ECtvM" + searchParams.get("v")
+          "https://www.youtube.com/embed/" + searchParams.get("v")
         }
       ></iframe>
     </div>
